@@ -5,7 +5,7 @@ import Ho from './screens/Home';
 export default function App() {
   return (
     <View style={styles.container}>
-        {/* <Log/> */}
+        <Log/>
         <Ho/>
 
     </View>
