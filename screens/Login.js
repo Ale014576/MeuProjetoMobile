@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
 
 
-export default function Log(){
+export default function Log({navigation}){
     return(
         <View style={styles.Log}>
             <View style={styles.titulo}>
@@ -11,20 +11,22 @@ export default function Log(){
                 <TextInput
                     style={styles.input}
                     placeholder="Login"
+                    keyboardType='String'
                 />
             </View>
             <View style={styles.input1}>
                 <TextInput
-                    style={styles.input}
+                    style={styles.input1}
                     placeholder="Senha"
                     keyboardType="numeric"
                 />
             </View>
             <View style={styles.button}>
                 <Button
-                    title="Confirmar"
-                    color="#841584"
-                /> 
+                    color="black"
+                    title="Login"
+                    onPress={() => navigation.navigate('Home')}
+                />
             </View> 
         </View>
     );
@@ -33,7 +35,7 @@ export default function Log(){
 const styles = StyleSheet.create({
     Log: {
         flex:1,
-        backgroundColor: '#EA1'
+        backgroundColor: 'gray'
     },
     titulo: {
         flex:1,
@@ -44,12 +46,20 @@ const styles = StyleSheet.create({
         flex: 1,
         marginLeft: 75,
         marginRight: 75,
-        marginTop: 120,
+        marginTop: 50,
+        fontSize: 30,
+        textAlign: 'center'
+    },
+    input1: {
+        flex: 1,
+        marginLeft: 75,
+        marginRight: 75,
+        marginTop: 80,
         fontSize: 30,
         textAlign: 'center'
     },
     button: {
-        margin: 110
+        margin: 150
     }
 
 })
