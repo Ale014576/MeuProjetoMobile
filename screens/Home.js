@@ -1,12 +1,14 @@
 import {Text, View, StyleSheet, Image} from 'react-native';
 import { ImageBackground } from 'react-native';
 import fundo from '../assets/fundo.png';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Ho(){
     return(
         <View style={styles.profile}>
             <ImageBackground style={{flex: 1, width:'100%', height:'100%'}} source={fundo}>
                 <View style={styles.text1}>
+                    <MaterialIcons name="home" size={24} color="black" />
                     <Text><h1>Hospital Pai Nosso</h1></Text>
                 </View>
                 <View style={styles.gallery}>

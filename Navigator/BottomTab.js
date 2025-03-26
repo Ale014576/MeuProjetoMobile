@@ -11,7 +11,8 @@ export default function BottomTab() {
 
   return (
     <NavigationContainer>
-      <BottomTab.Navigator>
+      <BottomTab.Navigator initialRouteName='Login'
+      >
         <BottomTab.Screen name='Login' component={Log}/>
         <BottomTab.Screen name='Home' component={Ho}/>
       </BottomTab.Navigator>

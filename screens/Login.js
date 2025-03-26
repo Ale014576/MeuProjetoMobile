@@ -1,11 +1,14 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 
 export default function Log({navigation}){
     return(
         <View style={styles.Log}>
             <View style={styles.titulo}>
-                <Text><h1>Insira aqui seus dados:</h1></Text>
+                <Text><h1>Login:</h1></Text>
+                <MaterialIcons name="login" size={24} color="black" />
             </View>
             <View style={styles.input}>
                 <TextInput
