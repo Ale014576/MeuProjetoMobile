@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
 
 
-export function Log(){
+export default function Log(){
     return(
         <View style={styles.Log}>
             <View style={styles.titulo}>
