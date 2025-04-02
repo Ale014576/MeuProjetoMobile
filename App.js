@@ -2,21 +2,20 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Ho from './screens/Home';
-import Feeds from './screens/Feed';
 import Log from './screens/Login';
+import Feeds from './screens/feed';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-export default function BottomTab() {
+
+function BottomTab() {
 
   const BottomTab = createBottomTabNavigator();
 
   return (
-    <NavigationContainer>
       <BottomTab.Navigator 
-      initialRouteName='Login' 
+       
       screenOptions={{
         tabBarActiveTintColor:'#A5A692',
         tabBarActiveBackgroundColor: '#13678A',
@@ -26,13 +25,7 @@ export default function BottomTab() {
         headerTintColor: '#D9042B'
       }}
       >
-        <BottomTab.Screen name='Login' component={Log} 
-        options={{
-          tabBarIcon: () => (
-            <MaterialIcons name="login" size={24} color="black" />
-          ),
-          
-        }}/>
+        
         <BottomTab.Screen name='Home' component={Ho} options={{
           tabBarIcon: () => (
             <MaterialIcons name="home" size={24} color="black" />
@@ -44,6 +37,18 @@ export default function BottomTab() {
           ),
         }}/>
       </BottomTab.Navigator>
-    </NavigationContainer>
   );
+}
+export default function App(){
+
+  const Stack = createStackNavigator();
+  
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name='Login' component={Log}/>
+      <Stack.Screen options={{headerShown:false}} name='HomeTab' component={BottomTab}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }

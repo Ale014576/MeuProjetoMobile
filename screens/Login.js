@@ -28,7 +28,7 @@ export default function Log({navigation}){
                 <Button
                     color="black"
                     title="Login"
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('HomeTab')}
                 />
             </View> 
         </View>
