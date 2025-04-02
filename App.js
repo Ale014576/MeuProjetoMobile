@@ -4,8 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import Ho from './screens/Home';
 import Log from './screens/Login';
 import Feeds from './screens/feed';
+import Counter from './screens/counter';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 
@@ -35,6 +37,11 @@ function BottomTab() {
           tabBarIcon: () => (
             <MaterialIcons name="feed" size={24} color="black"/>
           ),
+        }}/>
+        <BottomTab.Screen name='Counter' component={Counter} options={{
+          tabBarIcon: () =>(
+            <MaterialCommunityIcons name="counter" size={24} color="black" />
+          )
         }}/>
       </BottomTab.Navigator>
   );
