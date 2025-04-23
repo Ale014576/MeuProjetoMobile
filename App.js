@@ -8,6 +8,7 @@ import Counter from './screens/counter';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import Product from './screens/Product';
 
 
 
@@ -41,6 +42,11 @@ function BottomTab() {
         <BottomTab.Screen name='Counter' component={Counter} options={{
           tabBarIcon: () =>(
             <MaterialCommunityIcons name="counter" size={24} color="black" />
+          )
+        }}/>
+        <BottomTab.Screen name='Produtos' component={Product} options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="shopping-outline" size={24} color="black" />
           )
         }}/>
       </BottomTab.Navigator>
