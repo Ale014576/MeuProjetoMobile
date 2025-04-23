@@ -25,8 +25,6 @@ const styles = StyleSheet.create({
     },
     textproduct: {
         fontSize: 15,
-        
-        
     },
     img: {
         width: 100,
