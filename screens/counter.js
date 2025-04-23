@@ -3,6 +3,9 @@ import { useState } from "react";
 
 export default function Counter(){
     const [contador, setContador] = useState(0);
+    const [Nome, setNome] = useState("")
+    const [Email, setEmail] = useState("")
+    
     function Aumentar(){
         setContador(contador + 1)
     }
@@ -13,10 +16,7 @@ export default function Counter(){
         }
         
     }
-    function Pergunta1(){
-        
-    }
-    
+
     return(
         <View style = {styles.container}>
             <Text style = {styles.title}>Contador do Ale</Text>
@@ -35,17 +35,20 @@ export default function Counter(){
             <View>
                 <TextInput
                     style={styles.input}
-                    placeholder="Coloque o primeiro num: "
-                    keyboardType='Int'
+                    placeholder="Coloque o seu nome: "
+                    value={Nome}
+                    onChangeText={setNome}
                 />
             </View>
             <View>
                 <TextInput
                     style={styles.input}
-                    placeholder="Coloque o segundo num: "
-                    keyboardType='Int'
+                    placeholder="Coloque o seu email: "
+                    value={Email}
+                    onChangeText={setEmail}
                 />
             </View>
+            <Text>Oi, {Nome}, seu email é {Email}</Text>
             
             
         </View>
