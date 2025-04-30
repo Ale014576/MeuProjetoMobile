@@ -1,10 +1,12 @@
 import 'react-native-gesture-handler';
+import { initializeApp } from 'firebase/app';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Ho from './screens/Home';
 import Log from './screens/Login';
 import Feeds from './screens/feed';
 import Counter from './screens/counter';
+import Registor from './screens/cadastro';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -60,6 +62,7 @@ export default function App(){
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name='Login' component={Log}/>
+      <Stack.Screen name='Cadastrar' component={Registor}/>
       <Stack.Screen options={{headerShown:false}} name='HomeTab' component={BottomTab}/>
       </Stack.Navigator>
     </NavigationContainer>

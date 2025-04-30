@@ -20,7 +20,7 @@ export default function Product(){
             ))} */}
 
             <Text style={styles.text}>Produtos</Text>
-            <FlatList
+            <FlatList /* style={styles.card} */
             data = {produtos}
             renderItem={({item}) => (
                 <Card
@@ -50,25 +50,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-evenly',
     },
-/*     img: {
-        width: 100,
-        height: 100,
-    }, */
     text:{
         fontSize: 30,
         fontWeight: 'bold',
-        alignSelf: 'center'
-        
+        textAlign: 'center'
     },
-/*     card: {
+    card: {
         padding: 10,
         margin: 10,
         backgroundColor: '#47292345',
         borderRadius: '8',
-        alignItems: 'center'
+        alignSelf: 'center'
     },
-    textproduct: {
-        fontSize: 15
-    }, */
     
 })

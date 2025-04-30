@@ -1,34 +1,58 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-
+import { auth } from '../controller';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
 
 
 export default function Log({navigation}){
+
+    const [Email, setEmail] = useState("");
+    const [Senha, setSenha] = useState("");
+
+    const VerifyUser = () => {
+        signInWithEmailAndPassword(auth, Email, Senha).than((userCredential) => {
+            console.log('Usuário logado', userCredential.user.email);
+        })
+        .catch((error) => {
+            console.log('Erro ao logar', error.message);
+        });
+        
+    }
+
     return(
-        <View style={styles.Log}>
+        <View style={styles.container}>
             <View style={styles.titulo}>
-                <Text><h1>Login:</h1></Text>
+                <Text><h1>LOGIN:</h1></Text>
                 <MaterialIcons name="login" size={24} color="black" />
             </View>
             <View style={styles.input}>
                 <TextInput
                     style={styles.input}
                     placeholder="Login"
-                    keyboardType='String'
+                    value={Email}
+                    onChangeText={setEmail}
                 />
             </View>
             <View style={styles.input1}>
                 <TextInput
                     style={styles.input1}
                     placeholder="Senha"
-                    keyboardType="numeric"
+                    value={Senha}
+                    onChangeText={setSenha}
+                    secureTextEntry={true}
                 />
             </View>
             <View style={styles.button}>
                 <Button
                     color="black"
-                    title="Login"
-                    onPress={() => navigation.navigate('HomeTab')}
+                    title="Cadastrar"
+                    onPress={() => navigation.navigate('Cadastrar')}
+                />
+                <Button
+                    color="black"
+                    title="Entrar"
+                    onPress={VerifyUser}
                 />
             </View> 
         </View>
@@ -36,33 +60,31 @@ export default function Log({navigation}){
 }
 
 const styles = StyleSheet.create({
-    Log: {
+    container: {
         flex:1,
         backgroundColor: 'gray'
     },
     titulo: {
-        flex:1,
         marginTop: 100,
         alignItems: 'center'
     },
     input: {
-        flex: 1,
+        marginTop: 40,
         marginLeft: 75,
         marginRight: 75,
-        marginTop: 50,
         fontSize: 30,
         textAlign: 'center'
     },
     input1: {
-        flex: 1,
+
         marginLeft: 75,
         marginRight: 75,
-        marginTop: 80,
+        marginTop: 40,
         fontSize: 30,
         textAlign: 'center'
     },
     button: {
-        margin: 150
+        margin: 50
     }
 
 })
