@@ -11,7 +11,7 @@ export default function Log({navigation}){
     const [Senha, setSenha] = useState("");
 
     const VerifyUser = () => {
-        signInWithEmailAndPassword(auth, Email, Senha).than((userCredential) => {
+        signInWithEmailAndPassword(auth, Email, Senha).then((userCredential) => {
             console.log('Usuário logado', userCredential.user.email);
         })
         .catch((error) => {
