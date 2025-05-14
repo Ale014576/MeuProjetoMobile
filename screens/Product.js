@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import Card from '../components/card';
+import { db } from '../controller';
+import { collection, getDocs } from 'firebase/firestore';
 
 export default function Product(){
     const [produtos, setProdutos] = useState([
-        {id:1, nome: 'Camisa', valor: 59.99 , imagem : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj-ZJtfoj9PzkuWFRP0_B3T8n34Y4IxmWXyA&s'},
-        {id:2, nome: 'Calça', valor: 149.99 , imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs9ixQD_xyI6NYCFN1KiIZPUDwmY3fbpdQsQ&s'},
-        {id:3, nome: 'Tênis', valor: 449.99, imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGqizcZO6y1IYILPNIG2fuZ7Hzy8xzAVRRtA&s'},
-        {id:4, nome: 'Moletom', valor: 109.99, imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlCoDQjZCqi8mk_e_Nb84IXHUXe-57IUFG2w&s'},
+        useEffect(() => {
+            async function carregarProdutos() {
+                try {
+                    const querySnaphot = await getDocs(collection);
+                }
+            }
+        })
     ])
     
     return(

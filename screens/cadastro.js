@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Button, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../controller';
@@ -50,11 +50,15 @@ export default function Registor({navigation}){
                         title="Cadastrar"
                         onPress={cadastroUser}
                     />
-                    <Button
+                    {/* <Button
                         color="black"
                         title="Login"
                         onPress={() => navigation.navigate('Login')}
-                    />
+                    /> */}
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.input2}><h3>Deseja logar na sua conta?              Clique aqui!</h3></Text>
+                    </TouchableOpacity>
                 </View>
         </View> 
     );
@@ -82,6 +86,10 @@ const styles = StyleSheet.create({
         marginRight: 75,
         marginTop: 40,
         fontSize: 30,
+        textAlign: 'center'
+    },
+    input2: {
+        marginTop: 40,
         textAlign: 'center'
     },
     button: {

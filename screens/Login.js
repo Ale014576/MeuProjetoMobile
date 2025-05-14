@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import {Text, View, StyleSheet, TextInput, Button, TouchableOpacity} from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { auth } from '../controller';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -11,9 +11,13 @@ export default function Log({navigation}){
     const [Senha, setSenha] = useState("");
 
     const VerifyUser = () => {
-        signInWithEmailAndPassword(auth, Email, Senha).then((userCredential) => {
-            console.log('Usuário logado', userCredential.user.email);
+        signInWithEmailAndPassword( auth, Email, Senha).then((UserCredential) => {
+            console.log('Usuário Logado', UserCredential.user.email);
         })
+        
+        /* signInWithEmailAndPassword(auth, Email, Senha).then((userCredential) => {
+            console.log('Usuário logado', userCredential.user.email);
+        }) */
         .catch((error) => {
             console.log('Erro ao logar', error.message);
         });
@@ -44,16 +48,20 @@ export default function Log({navigation}){
                 />
             </View>
             <View style={styles.button}>
-                <Button
+                {/* <Button
                     color="black"
                     title="Cadastrar"
                     onPress={() => navigation.navigate('Cadastrar')}
-                />
+                /> */}
                 <Button
                     color="black"
                     title="Entrar"
                     onPress={VerifyUser}
                 />
+                
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastrar')}>
+                    <Text style={styles.input2}><h3>Deseja se cadastrar?                        Clique aqui!</h3></Text>
+                </TouchableOpacity>
             </View> 
         </View>
     );
@@ -81,6 +89,10 @@ const styles = StyleSheet.create({
         marginRight: 75,
         marginTop: 40,
         fontSize: 30,
+        textAlign: 'center'
+    },
+    input2: {
+        marginTop: 40,
         textAlign: 'center'
     },
     button: {
