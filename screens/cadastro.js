@@ -53,7 +53,7 @@ export default function Registor({navigation}){
                     <Button
                         color="black"
                         title="Login"
-                        onPress={() => navigation.navigate('HomeTab')}
+                        onPress={() => navigation.navigate('Login')}
                     />
                 </View>
         </View> 
