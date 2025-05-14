@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Product from './screens/Product';
+import AddProdutos from './screens/cadastroProdutos';
 
 
 
@@ -50,6 +51,11 @@ function BottomTab() {
           tabBarIcon: () => (
             <MaterialCommunityIcons name="shopping-outline" size={24} color="black" />
           )
+        }}/>
+        <BottomTab.Screen name='cadastroProdutos' component={AddProdutos} options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="bookmark-plus" size={24} color="black" />
+          ),
         }}/>
       </BottomTab.Navigator>
   );

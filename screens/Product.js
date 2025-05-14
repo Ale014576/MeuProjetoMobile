@@ -20,7 +20,7 @@ export default function Product(){
                 }
             }
             carregarProdutos();
-        }, [])
+        }, []);
     
     
     return(
@@ -37,9 +37,9 @@ export default function Product(){
             data = {produtos}
             renderItem={({item}) => (
                 <Card
-                nome={item.nome}
-                valor={item.valor}
-                imagem={item.imagem}
+                nome={item.Nome}
+                valor={item.Valor}
+                imagem={item.Imagem}
                 />
 
 

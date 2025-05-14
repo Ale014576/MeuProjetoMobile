@@ -11,10 +11,6 @@ export default function Log({navigation}){
     const [Senha, setSenha] = useState("");
 
     const VerifyUser = () => {
-        /* signInWithEmailAndPassword( auth, Email, Senha).then((UserCredential) => {
-            console.log('Usuário Logado', UserCredential.user.email);
-        })
-         */
         signInWithEmailAndPassword(auth, Email, Senha).then((userCredential) => {
             console.log('Usuário logado', userCredential.user.email);
             navigation.navigate('HomeTab')
