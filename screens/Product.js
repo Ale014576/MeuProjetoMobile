@@ -2,18 +2,26 @@ import { useEffect, useState } from 'react';
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import Card from '../components/card';
 import { db } from '../controller';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDocs } from 'firebase/firestore';
 
 export default function Product(){
-    const [produtos, setProdutos] = useState([
+    const [produtos, setProdutos] = useState([])
         useEffect(() => {
             async function carregarProdutos() {
                 try {
-                    const querySnaphot = await getDocs(collection);
+                    const querySnaphot = await getDocs(collection(db, 'Produtos'));
+                    const lista = [];
+                    querySnaphot.forEach((doc) => {
+                        lista.push({id : doc.id, ...doc.data()});
+                    });
+                    setProdutos(lista);
+                } catch (error) {
+                    console.log('Produto não encontrado.', error);
                 }
             }
-        })
-    ])
+            carregarProdutos();
+        }, [])
+    
     
     return(
         <View style={styles.container}>

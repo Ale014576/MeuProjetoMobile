@@ -12,8 +12,8 @@ export default function Registor({navigation}){
     const cadastroUser = () => {
         createUserWithEmailAndPassword(auth, Email, Senha).then((userCredential) => {
             // Signed up 
-            console.log("Cadastrado!", userCredential.user.email)
-            navigation.navigate('Login')
+            console.log("Cadastrado!", userCredential.user.email);
+            navigation.navigate('Login');
           })
           .catch((error) => {
             console.log('Erro', error.message);
