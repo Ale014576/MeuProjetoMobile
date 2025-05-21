@@ -59,7 +59,7 @@ function BottomTab() {
             <MaterialCommunityIcons name="bookmark-plus" size={24} color="black" />
           ),
         }}/>
-        <BottomTab.Screen name='carrinho' component={Carrinho}/>
+        <BottomTab.Screen name='Carrinho' component={Carrinho}/>
       </BottomTab.Navigator>
   );
 }
