@@ -8,7 +8,7 @@ export default function Card({nome, valor, imagem}){
             <View style={styles.lado}>
                 <Text style={styles.textproduct}>{nome}</Text>
                 <Text style={styles.textproduct}>R$ {valor}</Text>
-                <Button style={styles.button} color='black' title='Comprar'/>
+                {/* <Button style={styles.button} color='black' title='Comprar'/> */}
             </View>
             
             
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         
     },
-    button: {
-        marginLeft: 10,
-    },
+/*     button: {
+        marginLeft: 50,
+    }, */
     img: {
         width: 150,
         height: 150,

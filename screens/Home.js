@@ -9,14 +9,14 @@ export default function Ho(){
             <ImageBackground style={{flex: 1, width:'100%', height:'100%'}} source={fundo}>
                 <View style={styles.text1}>
                     <MaterialIcons name="home" size={24} color="black" />
-                    <Text><h1>Hospital Pai Nosso</h1></Text>
+                    <Text><h1>Loja Nice sports</h1></Text>
                 </View>
                 <View style={styles.gallery}>
                     <Image style={styles.img} source={require('../assets/hospital1.jpg')}/>
                     <Image style={styles.img} source={require('../assets/hospital2.jpg')}/>
                 </View>
                 <View style={styles.text2}>
-                    <Text><h2>O Hospital Pai Nosso garante conforto e segurança para toda a região de Criciúma, trazendo consigo confiança no serviço.</h2></Text>
+                    <Text><h2>A Loja Nice sports garante conforto e segurança para toda a região de Criciúma, trazendo consigo confiança no serviço.</h2></Text>
                 </View>
                 <View style={styles.gallery}>
                     <Image style={styles.img} source={require('../assets/hospital3.jpg')}/>

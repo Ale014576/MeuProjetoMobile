@@ -13,7 +13,7 @@ export default function AddProdutos(){
         try {
             await addDoc(collection(db, 'Produtos'), {
                 Nome,
-                valor: parseFloat(Valor),
+                Valor: parseFloat(Valor),
                 Imagem
             });
             setNome("");
@@ -37,7 +37,7 @@ export default function AddProdutos(){
                     onChangeText={setNome}
                 />
             </View>
-            <View style={styles.input1}>
+            <View>
                 <TextInput
                     style={styles.input1}
                     placeholder="Valor"
@@ -45,8 +45,9 @@ export default function AddProdutos(){
                     onChangeText={setValor}
                 />
             </View>
-            <View style={styles.input2}>
+            <View>
                 <TextInput
+                    style={styles.input2}
                     placeholder="Imagem"
                     value={Imagem}
                     onChangeText={setImagem}
@@ -67,35 +68,32 @@ export default function AddProdutos(){
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: 'gray'
+        backgroundColor: 'gray',
+        justifyContent: 'space-around'
     },
     titulo: {
-        marginTop: 100,
+        /* marginTop: 100, */
         alignItems: 'center'
     },
     input: {
-        marginTop: 40,
-        marginLeft: 75,
-        marginRight: 75,
         fontSize: 30,
+        alignSelf: 'center',
         textAlign: 'center'
     },
     input1: {
-        marginLeft: 75,
-        marginRight: 75,
-        marginTop: 40,
         fontSize: 30,
+        alignSelf: 'center',
         textAlign: 'center'
     },
     input2: {
-        marginLeft: 75,
-        marginRight: 75,
-        marginTop: 40,
         fontSize: 30,
+        alignSelf: 'center',
         textAlign: 'center'
     },
     button: {
-        margin: 50
+        width: 300,
+        height: 100,
+        alignSelf: 'center'
     }
 
 })
