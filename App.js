@@ -12,6 +12,8 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Product from './screens/Product';
 import AddProdutos from './screens/cadastroProdutos';
+import { CartProvider } from './components/CarProvider';
+import { Carrinho } from './components/carrinho';
 
 
 
@@ -57,6 +59,7 @@ function BottomTab() {
             <MaterialCommunityIcons name="bookmark-plus" size={24} color="black" />
           ),
         }}/>
+        <BottomTab.Screen name='carrinho' component={Carrinho}/>
       </BottomTab.Navigator>
   );
 }
@@ -65,12 +68,16 @@ export default function App(){
   const Stack = createStackNavigator();
   
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name='Login' component={Log}/>
-      <Stack.Screen name='Cadastrar' component={Registor}/>
-      <Stack.Screen options={{headerShown:false}} name='HomeTab' component={BottomTab}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Login' component={Log}/>
+          <Stack.Screen name='Cadastrar' component={Registor}/>
+          <Stack.Screen options={{headerShown:false}} name='HomeTab' component={BottomTab}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
+
+    
   )
 }

@@ -1,6 +1,6 @@
 import {Text, View, StyleSheet, Image} from 'react-native';
 import { ImageBackground } from 'react-native';
-import fundo from '../assets/fundo.png';
+import fundo from '../assets/fundo.jpg';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Ho(){
@@ -12,18 +12,18 @@ export default function Ho(){
                     <Text><h1>Loja Nice sports</h1></Text>
                 </View>
                 <View style={styles.gallery}>
-                    <Image style={styles.img} source={require('../assets/hospital1.jpg')}/>
-                    <Image style={styles.img} source={require('../assets/hospital2.jpg')}/>
+                    <Image style={styles.img} source={require('../assets/fut.jpg')}/>
+                    <Image style={styles.img} source={require('../assets/cones.jpg')}/>
                 </View>
                 <View style={styles.text2}>
-                    <Text><h2>A Loja Nice sports garante conforto e segurança para toda a região de Criciúma, trazendo consigo confiança no serviço.</h2></Text>
+                    <Text><h2>A Loja Nice sports trás conforto e segurança para Criciúma.</h2></Text>
                 </View>
                 <View style={styles.gallery}>
-                    <Image style={styles.img} source={require('../assets/hospital3.jpg')}/>
-                    <Image style={styles.img} source={require('../assets/hospital4.jpg')}/>
+                    <Image style={styles.img} source={require('../assets/xadrez.jpg')}/>
+                    <Image style={styles.img} source={require('../assets/taco.jpg')}/>
                 </View>
                 <View style={styles.text3}>
-                    <Text><h4>Venha você também conhecer o Hospital Pai Nosso.</h4></Text>
+                    <Text><h4>Venha você também conhecer a Loja Nice sports.</h4></Text>
                 </View>
             </ImageBackground>
             
